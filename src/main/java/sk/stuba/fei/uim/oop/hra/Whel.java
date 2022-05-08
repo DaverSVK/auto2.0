@@ -14,14 +14,12 @@ public class Whel extends Rectangle{
         if (id == 1) {
             x = xx + (int) (Math.cos(Firad+1.5706) * 6);
             y = yy + (int) (Math.sin(Firad+1.5706) * 6);
-            clas.setXsko1(x);
-            clas.setYnko1(y);
+
         }
         if (id == 2){
             x = xx -(int)(Math.cos(Firad+1.5706)*6);
             y = yy -(int)(Math.sin(Firad+1.5706)*6);
-            clas.setXsko2(x);
-            clas.setYnko2(y);
+
         }
 
     }

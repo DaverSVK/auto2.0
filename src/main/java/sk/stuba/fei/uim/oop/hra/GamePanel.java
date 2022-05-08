@@ -19,21 +19,14 @@ public class GamePanel extends JPanel implements Runnable{
     Ball ball;
     Whel ball1;
     Whel ball2;
-    int Xsko;
-    int Ynko;
-    int Xsko1;
-    int Ynko1;
-    int Xsko2;
-    int Ynko2;
-    double Firad;
+    double Xsko;
+    double Ynko;
+
+    double Firad=0;
     boolean Write=true;
     GamePanel clas;
-    ArrayList<Integer> suradnicaX=new ArrayList<>();
-    ArrayList<Integer> suradnicaY=new ArrayList<>();
-    ArrayList<Integer> suradnicaX1=new ArrayList<>();
-    ArrayList<Integer> suradnicaY1=new ArrayList<>();
-    ArrayList<Integer> suradnicaX2=new ArrayList<>();
-    ArrayList<Integer> suradnicaY2=new ArrayList<>();
+    ArrayList<Double> suradnicaX=new ArrayList<>();
+    ArrayList<Double> suradnicaY=new ArrayList<>();
     ArrayList<Double> uholVT=new ArrayList<>();
 
 
@@ -69,14 +62,12 @@ public class GamePanel extends JPanel implements Runnable{
     }
     public void move() {
         ball.move();
-        ball1.move(Xsko,Ynko,Firad,this);
-        ball2.move(Xsko,Ynko,Firad,this);
-        suradnicaX.add((int) ball.getX());
-        suradnicaY.add((int) ball.getY());
-        suradnicaX1.add((int) ball1.getX());
-        suradnicaY1.add((int) ball1.getY());
-        suradnicaX2.add((int) ball2.getX());
-        suradnicaY2.add((int) ball2.getY());
+        ball1.move((int)Xsko,(int)Ynko,Firad,this);
+        ball2.move((int)Xsko,(int)Ynko,Firad,this);
+        suradnicaX.add( ball.getX());
+        suradnicaY.add( ball.getY());
+        System.out.println(Firad);
+        System.out.println(uholVT.size());
         uholVT.add(Firad);
 
     }
@@ -105,7 +96,7 @@ public class GamePanel extends JPanel implements Runnable{
                 Write=(false);
             }
             if(e.getKeyCode()==KeyEvent.VK_J) {
-                new WriteToFile(suradnicaX, suradnicaY,suradnicaX1,suradnicaY1,suradnicaX2,suradnicaY2, uholVT);
+                new WriteToFile(suradnicaX, suradnicaY, uholVT);
             }
         }
         public void keyReleased(KeyEvent e) {
@@ -129,19 +120,5 @@ public class GamePanel extends JPanel implements Runnable{
         Write = write;
     }
 
-    public void setXsko1(int xsko1) {
-        Xsko1 = xsko1;
-    }
 
-    public void setYnko1(int ynko1) {
-        Ynko1 = ynko1;
-    }
-
-    public void setXsko2(int xsko2) {
-        Xsko2 = xsko2;
-    }
-
-    public void setYnko2(int ynko2) {
-        Ynko2 = ynko2;
-    }
 }
