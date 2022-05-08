@@ -66,8 +66,6 @@ public class GamePanel extends JPanel implements Runnable{
         ball2.move((int)Xsko,(int)Ynko,Firad,this);
         suradnicaX.add( ball.getX());
         suradnicaY.add( ball.getY());
-        System.out.println(Firad);
-        System.out.println(uholVT.size());
         uholVT.add(Firad);
 
     }
