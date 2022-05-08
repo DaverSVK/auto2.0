@@ -6,7 +6,6 @@ import java.util.*;
 
 public class Ball extends Rectangle{
 
-    Random random;
     double speedX;
     double speedY;
 
@@ -18,8 +17,6 @@ public class Ball extends Rectangle{
 
 
     int speed = 10;
-
-    int initialSpeed = 2;
 
     Ball(int x, int y, int width, int height,GamePanel clas){
         super(x,y,width,height);

@@ -12,10 +12,8 @@ public class WriteToFile {
 
         try {
 
-            // Step 1:  Create an object of FileOutputStream
             outputStream = new PrintWriter("hodnoty.csv");
 
-            // Step 2: Store byte content from string
             StringBuilder WTF = new StringBuilder();
             for (Integer x : suradnicaX) {
                 WTF.append(x);
@@ -53,18 +51,16 @@ public class WriteToFile {
             }
             WTF.append('\n');
             System.out.print(WTF);
-            // Step 3: Write into the file
             outputStream.write(WTF.toString());
             outputStream.close();
 
-            // Print the success message (Optional)
+
             System.out.print("File is created successfully with the content.");
         }
 
-        // Catch block to handle the exception
+
         catch (IOException e) {
 
-            // Display the exception/s
             System.out.print(e.getMessage());
         }
 

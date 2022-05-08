@@ -64,7 +64,7 @@ public class GamePanel extends JPanel implements Runnable{
         ball.draw(g);
         ball1.draw(g);
         ball2.draw(g);
-        Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the video, it helps with the animation
+        Toolkit.getDefaultToolkit().sync();
 
     }
     public void move() {
@@ -82,7 +82,6 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
     public void run() {
-        //game loop
         long lastTime = System.nanoTime();
         double amountOfTicks =60.0;
         double ns = 1000000000 / amountOfTicks;
